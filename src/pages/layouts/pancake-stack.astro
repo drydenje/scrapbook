@@ -1,0 +1,36 @@
+!---
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Pancake Stack</title>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="header">Header</div>
+      <div class="content">Content</div>
+      <div class="footer">Footer</div>
+    </div>
+  </body>
+</html>
+
+<style>
+  .parent {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    min-height: 100vh;
+  }
+
+  .header, .footer {
+    background-color: goldenrod;
+    padding: 2rem;
+  }
+
+  body {
+    margin: 0;
+  }
+</style>
