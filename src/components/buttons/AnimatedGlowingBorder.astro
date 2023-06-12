@@ -1,0 +1,55 @@
+<button class="button glow-effect">
+  <!-- Animated and Glowing -->
+  Hi there 👋
+  <svg class="glow-container">
+    <rect pathLength="100" class="glow-blur"></rect>
+    <rect pathLength="100" class="glow-line"></rect>
+  </svg>
+</button>
+
+<style>
+  .button {
+    cursor: pointer;
+    font-size: 2rem
+    font-family: inherit;
+    font-weight: 700;
+    color: hsl(320, 40%, 40%);
+    background-color:hsl(349 100% 95%);
+    padding: 0.75em 1.25em;
+    border: 0;
+    border-radius: 1.25rem;
+  }
+
+  .glow-container {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    outline: 3px solid blue;
+  }
+
+  .glow-effect {
+    position: relative;
+  }
+
+  .glow-blur,
+  .glow-line {
+    width: 100%;
+    height: 100%;
+    rx: 1.25rem;
+    fill:transparent;
+    stroke: black;
+    stroke-width: 5px;
+    stroke-dasharray: 20px 30px;
+    transition: stroke-dashoffset 2000ms;
+  }
+
+  .glow-effect:hover .glow-blur,
+  .glow-effect:hover .glow-line {
+    stroke-dashoffset: -65px;
+  }
+
+  .glow-blur {
+    filter: blur(5px);
+  }
+</style>
