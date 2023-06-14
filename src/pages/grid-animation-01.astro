@@ -1,0 +1,79 @@
+!---
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Grid Animation Test</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="grid">
+        <div class="A cell">A</div>
+        <div class="B cell">B</div>
+        <div class="C cell">C</div>
+        <div class="D cell">D</div>
+        <div class="E cell">E</div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  div {
+    /* border: 2px solid blue; */
+  }
+
+  .container {
+    display: inline-block;
+  }
+
+  .grid {
+    display: grid;
+    grid-gap:20px;
+    width: 900px;
+    height: 600px;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 2fr;
+    grid-template-areas: 
+      "leftside   top     rightside"
+      "leftside   bottom  rightside";
+  }
+
+  .cell {
+    /* width: 100%; */
+    /* display: none; */
+    
+  }
+
+  .A {
+    background: red;
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    display: inline-block;
+  }
+
+  .B {
+    background: teal;
+    grid-area: leftside;
+  }
+
+  .C {
+    background: rgb(0, 128, 2);
+    grid-area: top;
+  }
+  
+  .D {
+    background: rgb(128, 0, 90);
+    grid-area: leftside;
+  }
+
+  .E {
+    background: rgb(17, 235, 235);
+    grid-area: rightside;
+  }
+
+</style>

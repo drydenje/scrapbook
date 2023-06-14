@@ -1,0 +1,30 @@
+!---
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Sidebar Says</title>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="sidebar">Sidebar: Min 150px, max 25%</div>
+      <div class="content">Content that takes up the remaining space</div>
+    </div>
+  </body>
+</html>
+
+<style>
+  .parent {
+    display: grid;
+    grid-template-columns: minmax(150px, 25%) 1fr;
+    height: 100vh;
+  }
+
+  .sidebar {
+    background-color: goldenrod;
+  }
+</style>

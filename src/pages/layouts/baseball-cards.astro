@@ -1,0 +1,59 @@
+!---
+
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Cards that line up</title>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="card">
+        <h3>Title - Card 1</h3>
+        <p contenteditable>Medium length description with a few more words here.</p>
+        <div class="visual"></div>
+      </div>
+      <div class="card">
+        <h3>Title - Card 2</h3>
+        <p contenteditable>Long Description. Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+        <div class="visual"></div>
+      </div>
+      <div class="card">
+        <h3>Title - Card 3</h3>
+        <p contenteditable>Short Description.</p>
+        <div class="visual"></div>
+      </div>
+    </div>
+  </body>
+</html>
+
+<style>
+  .parent {
+    /* max-width: 800px; */
+    height: auto;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .visual {
+    height: 100px;
+    width: 100%;
+    background-color: dodgerblue;
+  }
+  
+  .card {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-between;
+    background-color: goldenrod;
+  }
+
+  h3 {
+    margin: 0;
+  }
+</style>
