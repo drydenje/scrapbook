@@ -12,8 +12,8 @@
     box-sizing: border-box;
   }
   html {
-    /* --button-radius: 0.75rem; */
-    --button-radius: 1.25rem;
+    --button-radius: 0.75rem;
+    /* --button-radius: 1.25rem; */
   }
 
   .button {
@@ -64,12 +64,6 @@
     stroke-width: 5px;
     stroke-dasharray: var(--glow-line-length) calc(50px - var(--glow-line-length));
     }
-    
-    /* .glow-effect:hover .glow-blur,
-    .glow-effect:hover .glow-line {
-      stroke-dashoffset: -80px;
-      transition: stroke-dashoffset var(--animation-speed) ease-in;
-  } */
 
   .glow-effect:is(:hover, :focus) :is(.glow-line, .glow-blur) {
     stroke-dashoffset: -80px;
