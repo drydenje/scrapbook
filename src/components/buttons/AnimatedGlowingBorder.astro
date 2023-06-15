@@ -1,6 +1,21 @@
-<button class="button glow-effect">
-  <!-- Animated and Glowing -->
-  Hi there 👋
+---
+export interface Props {
+  text: string,
+  glowAnimation?: string,
+  glowOffset?: string,
+}
+
+const { text, glowAnimation = true, glowOffset = false } = Astro.props;
+---
+
+
+
+<button 
+  class="button glow-effect"
+  data-glow-animation={glowAnimation}
+  data-glow-offset={glowOffset}
+  >
+  {text}
   <svg class="glow-container">
     <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
     <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
@@ -91,5 +106,14 @@
   @keyframes glow-visibility {
     0%, 100%{ opacity: 0 }
     25%, 75% { opacity: 1 }
+  }
+
+  /* This is to turn off the glow animation. The data attribute could be passed as a prop, or just set up in the html (good for if you're not using a framework) */
+  .glow-effect[data-glow-animation="false"] {
+    --glow-line-length: 50px;
+  }
+
+  .glow-effect[data-glow-offset="true"] {
+    --glow-offset: 10px;
   }
 </style>
