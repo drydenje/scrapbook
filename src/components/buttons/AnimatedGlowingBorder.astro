@@ -6,7 +6,7 @@ export interface Props {
 }
 
 const { text, glowAnimation = true, glowOffset = false } = Astro.props;
-const rx = "0.75rem";
+const rx = "20px";
 
 // This function would be used on a simple html page to set the values of rx
 // (not needed in a framework)
@@ -31,9 +31,9 @@ const rx = "0.75rem";
 >
   {text}
   <svg class="glow-container">
-    <rect rx="0.75rem" pathLength="100" stroke-linecap="round" class="glow-blur"
+    <rect pathLength="100" stroke-linecap="round" class="glow-blur" rx="20px"
     ></rect>
-    <rect rx="0.75rem" pathLength="100" stroke-linecap="round" class="glow-line"
+    <rect pathLength="100" stroke-linecap="round" class="glow-line" rx="20px"
     ></rect>
   </svg>
 </button>
@@ -58,7 +58,8 @@ const rx = "0.75rem";
     background-color: hsl(349 100% 95%);
     padding: 0.75em 1.25em;
     border: 0;
-    border-radius: var(--button-radius);
+    /* border-radius: var(--button-radius); */
+    border-radius: 1.25rem;
   }
 
   .glow-effect {
@@ -67,7 +68,7 @@ const rx = "0.75rem";
     --glow-line-thickness: 2px;
     --glow-line-length: 20px;
     --glow-blur-color: #fff;
-    --glow-blur-size: 10px;
+    --glow-blur-size: 5px;
     --glow-offset: 0px;
     --animation-speed: 1200ms;
 
