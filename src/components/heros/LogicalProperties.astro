@@ -12,7 +12,18 @@
 </header>
 
 <style>
+  body,
+  h1 {
+    margin: 0;
+  }
   header {
     background-color: dodgerblue;
+
+    /* Equivalent to max-width */
+    max-inline-size: 64rem;
+    /* Equivalent to margin-right, margin-left */
+    margin-inline: auto;
+    /* Equivalent to height: 100vh */
+    block-size: 100dvh;
   }
 </style>
