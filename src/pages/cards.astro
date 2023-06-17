@@ -10,8 +10,20 @@ import CarCard from "../components/cards/CarCard.astro";
     <title>Document</title>
   </head>
   <body>
-    <CarCard title="Sedans" buttonText="Learn More">Test</CarCard>
-    <CarCard title="Suvs" buttonText="Learn More">Test</CarCard>
-    <CarCard title="Luxury" buttonText="Learn More">Test</CarCard>
+    <main>
+      <CarCard />
+    </main>
   </body>
 </html>
+
+<style>
+  body {
+    margin: 0;
+  }
+
+  main {
+    display: grid;
+    height: 100vh;
+    place-items: center;
+  }
+</style>

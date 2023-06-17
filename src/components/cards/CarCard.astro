@@ -1,19 +1,78 @@
----
-export interface Props {
-  title: string;
-  buttonText: string;
-}
-
-const { title, buttonText } = Astro.props;
----
-
-<div class="card">
-  <h3>{title}</h3>
-  <slot />
-  <button>{buttonText}</button>
+<div class="container">
+  <div class="card">
+    <h3 class="title">Sedans</h3>
+    <p class="description">
+      Choose a sedan for its affordability and excellent fuel economy. Ideal for
+      crusing in the city or on your next road trip.
+    </p>
+    <a href="#" class="learn-more">Learn More</a>
+  </div>
+  <div class="card">
+    <h3 class="title">Suvs</h3>
+    <p class="description">
+      Take an SUV for its spacious interior, power, and versatility. Perfect for
+      your next family vacation and off-road adventures.
+    </p>
+    <a href="#" class="learn-more">Learn More</a>
+  </div>
+  <div class="card">
+    <h3 class="title">Luxury</h3>
+    <p class="description">
+      Cruise in the best car brands without the bloated prices. Enjoy th
+      enhanced comfort of a luxury rental and arrive in style.
+    </p>
+    <a href="#" class="learn-more">Learn More</a>
+  </div>
 </div>
 
 <style>
+  body {
+    --white: #fff;
+    --left-background: hsl(30deg 76% 53%);
+    --center-background: hsl(187deg 47% 31%);
+    --right-background: hsl(178deg 47% 17%);
+  }
+  .container {
+    /* border: 1px solid dodgerblue; */
+    height: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
   .card {
+    /* border: 1px solid yellowgreen; */
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    justify-content: space-between;
+    color: var(--white);
+  }
+
+  .card:nth-child(1) {
+    background-color: var(--left-background);
+    border-radius: 1rem 0 0 1rem;
+  }
+  .card:nth-child(2) {
+    background-color: var(--center-background);
+  }
+  .card:nth-child(3) {
+    background-color: var(--right-background);
+    border-radius: 0 1rem 1rem 0;
+  }
+
+  .title {
+    text-transform: uppercase;
+  }
+
+  .description {
+    /*  */
+  }
+
+  .learn-more {
+    display: inline-block;
+    width: auto;
+    padding: 1em 3em;
+    /* color: var(--white); */
+    border: 1px solid green;
+    background-color: var(--white);
   }
 </style>
