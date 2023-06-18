@@ -1,5 +1,15 @@
+---
+// Supports weights 100-900
+import "@fontsource-variable/lexend-deca";
+import "@fontsource-variable/big-shoulders-display";
+import icon_sedans from "./icons/icon-sedans.svg";
+import icon_suvs from "./icons/icon-suvs.svg";
+import icon_luxury from "./icons/icon-luxury.svg";
+---
+
 <div class="container">
   <div class="card">
+    <img src={icon_sedans} alt="An icon of a sedan" />
     <h3 class="title">Sedans</h3>
     <p class="description">
       Choose a sedan for its affordability and excellent fuel economy. Ideal for
@@ -8,6 +18,7 @@
     <a href="#" class="learn-more">Learn More</a>
   </div>
   <div class="card">
+    <img src={icon_suvs} alt="An icon of a SUV" />
     <h3 class="title">Suvs</h3>
     <p class="description">
       Take an SUV for its spacious interior, power, and versatility. Perfect for
@@ -16,6 +27,7 @@
     <a href="#" class="learn-more">Learn More</a>
   </div>
   <div class="card">
+    <img src={icon_luxury} alt="An icon of a luxury car" />
     <h3 class="title">Luxury</h3>
     <p class="description">
       Cruise in the best car brands without the bloated prices. Enjoy th
@@ -27,10 +39,18 @@
 
 <style>
   body {
-    --white: #fff;
-    --left-background: hsl(30deg 76% 53%);
-    --center-background: hsl(187deg 47% 31%);
-    --right-background: hsl(178deg 47% 17%);
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+    /* paragraphs */
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    /* backgrounds, headings, buttons */
+    --light-gray: hsl(0, 0%, 95%);
+    --bright-orange: hsl(31 77% 52%);
+    --dark-cyan: hsl(184 100% 22%);
+    --very-dark-cyan: hsl(179 100% 13%);
+
+    /* font-family: 'Lexend Deca Variable', sans-serif; weights: 400*/
+    /* font-family: 'Big Shoulders Display Variable', sans-serif; weight: 700 */
   }
   .container {
     /* border: 1px solid dodgerblue; */
@@ -40,26 +60,32 @@
   }
   .card {
     /* border: 1px solid yellowgreen; */
+    font-family: "Lexend Deca Variable", sans-serif;
+    font-weight: 400;
+
     display: flex;
     flex-direction: column;
     padding: 1rem;
     justify-content: space-between;
-    color: var(--white);
+    color: var(--transparent-white);
   }
 
   .card:nth-child(1) {
-    background-color: var(--left-background);
+    background-color: var(--bright-orange);
     border-radius: 1rem 0 0 1rem;
   }
   .card:nth-child(2) {
-    background-color: var(--center-background);
+    background-color: var(--dark-cyan);
   }
   .card:nth-child(3) {
-    background-color: var(--right-background);
+    background-color: var(--very-dark-cyan);
     border-radius: 0 1rem 1rem 0;
   }
 
   .title {
+    font-family: "Big Shoulders Display Variable", sans-serif;
+    font-weight: 700;
+    color: var(--light-gray);
     text-transform: uppercase;
   }
 
@@ -71,8 +97,8 @@
     display: inline-block;
     width: auto;
     padding: 1em 3em;
-    /* color: var(--white); */
+    /* color: var(--transparent-white); */
     border: 1px solid green;
-    background-color: var(--white);
+    background-color: var(--transparent-white);
   }
 </style>
