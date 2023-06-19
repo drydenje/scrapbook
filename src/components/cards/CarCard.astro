@@ -38,8 +38,15 @@ import icon_luxury from "./icons/icon-luxury.svg";
 </div>
 
 <style>
+  * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+  html {
+    font-size: 62.5%;
+  }
   body {
-    font-size: 125%;
     --mobile-width: 375px;
     --desktop-width: 1440px;
     /* paragraphs */
@@ -64,7 +71,7 @@ import icon_luxury from "./icons/icon-luxury.svg";
     /* border: 1px solid yellowgreen; */
     font-family: "Lexend Deca Variable", sans-serif;
     font-weight: 400;
-    font-size: 0.9rem;
+    font-size: 1.35rem;
     display: flex;
     flex-direction: column;
     padding: 40px;
@@ -73,7 +80,7 @@ import icon_luxury from "./icons/icon-luxury.svg";
   }
 
   .card img {
-    width: 5rem;
+    width: 5.5rem;
   }
   .card:nth-child(1) {
     background-color: var(--bright-orange);
@@ -90,19 +97,19 @@ import icon_luxury from "./icons/icon-luxury.svg";
   .title {
     font-family: "Big Shoulders Display Variable", sans-serif;
     font-weight: 700;
-    font-size: 3rem;
+    font-size: 3.5rem;
     color: var(--light-gray);
     text-transform: uppercase;
   }
 
   .description {
-    /*  */
+    line-height: 2.3rem;
   }
 
   .learn-more {
     display: inline;
     width: fit-content;
-    padding: 1em 1.9em;
+    padding: 0.9em 2.1em;
     text-decoration: none;
     /* border: 1px solid green; */
     background-color: var(--transparent-white);
