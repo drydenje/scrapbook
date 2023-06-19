@@ -39,6 +39,7 @@ import icon_luxury from "./icons/icon-luxury.svg";
 
 <style>
   body {
+    font-size: 125%;
     --mobile-width: 375px;
     --desktop-width: 1440px;
     /* paragraphs */
@@ -55,6 +56,7 @@ import icon_luxury from "./icons/icon-luxury.svg";
   .container {
     /* border: 1px solid dodgerblue; */
     height: auto;
+    max-width: calc(280px * 3);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
   }
@@ -62,14 +64,17 @@ import icon_luxury from "./icons/icon-luxury.svg";
     /* border: 1px solid yellowgreen; */
     font-family: "Lexend Deca Variable", sans-serif;
     font-weight: 400;
-
+    font-size: 0.9rem;
     display: flex;
     flex-direction: column;
-    padding: 1rem;
+    padding: 40px;
     justify-content: space-between;
     color: var(--transparent-white);
   }
 
+  .card img {
+    width: 5rem;
+  }
   .card:nth-child(1) {
     background-color: var(--bright-orange);
     border-radius: 1rem 0 0 1rem;
@@ -85,6 +90,7 @@ import icon_luxury from "./icons/icon-luxury.svg";
   .title {
     font-family: "Big Shoulders Display Variable", sans-serif;
     font-weight: 700;
+    font-size: 3rem;
     color: var(--light-gray);
     text-transform: uppercase;
   }
@@ -94,11 +100,22 @@ import icon_luxury from "./icons/icon-luxury.svg";
   }
 
   .learn-more {
-    display: inline-block;
-    width: auto;
-    padding: 1em 3em;
-    /* color: var(--transparent-white); */
-    border: 1px solid green;
+    display: inline;
+    width: fit-content;
+    padding: 1em 1.9em;
+    text-decoration: none;
+    /* border: 1px solid green; */
     background-color: var(--transparent-white);
+    border-radius: 25px;
+  }
+
+  .card:nth-child(1) .learn-more {
+    color: var(--bright-orange);
+  }
+  .card:nth-child(2) .learn-more {
+    color: var(--dark-cyan);
+  }
+  .card:nth-child(3) .learn-more {
+    color: var(--very-dark-cyan);
   }
 </style>
