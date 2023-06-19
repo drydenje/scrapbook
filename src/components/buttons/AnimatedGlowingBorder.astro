@@ -1,14 +1,47 @@
-<button class="button glow-effect">
-  <!-- Animated and Glowing -->
-  Hi there 👋
+---
+export interface Props {
+  text: string;
+  glowAnimation?: string;
+  glowOffset?: string;
+}
+
+const { text, glowAnimation = true, glowOffset = false } = Astro.props;
+const rx = "20px";
+
+// This function would be used on a simple html page to set the values of rx
+// (not needed in a framework)
+// (function setGlowEffectRx () {
+//   const glowEffects = document.querySelectorAll('.glow-effect');
+
+//   glowEffects.forEach(glowEffect => {
+//     const glowLines = glowEffect.querySelectorAll('rect');
+//     const rx = getComputedStyle(glowEffect).borderRadius;
+
+//     glowLines.forEach(line => {
+//       line.setAttribute('rx', rx)
+//     })
+//   })
+// })();
+---
+
+<button
+  class="button glow-effect"
+  data-glow-animation={glowAnimation}
+  data-glow-offset={glowOffset}
+>
+  {text}
   <svg class="glow-container">
-    <rect pathLength="100" stroke-linecap="round" class="glow-blur"></rect>
-    <rect pathLength="100" stroke-linecap="round" class="glow-line"></rect>
+    <rect pathLength="100" stroke-linecap="round" class="glow-blur" rx="20px"
+    ></rect>
+    <rect pathLength="100" stroke-linecap="round" class="glow-line" rx="20px"
+    ></rect>
   </svg>
 </button>
 
 <style>
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
   }
   html {
@@ -18,14 +51,15 @@
 
   .button {
     cursor: pointer;
-    font-size: 2rem
+    font-size: 1rem;
     font-family: inherit;
     font-weight: 700;
     color: hsl(320, 40%, 40%);
-    background-color:hsl(349 100% 95%);
+    background-color: hsl(349 100% 95%);
     padding: 0.75em 1.25em;
     border: 0;
-    border-radius: var(--button-radius);
+    /* border-radius: var(--button-radius); */
+    border-radius: 1.25rem;
   }
 
   .glow-effect {
@@ -34,13 +68,13 @@
     --glow-line-thickness: 2px;
     --glow-line-length: 20px;
     --glow-blur-color: #fff;
-    --glow-blur-size: 10px;
+    --glow-blur-size: 5px;
     --glow-offset: 0px;
     --animation-speed: 1200ms;
 
-      /* button size calculations */
-      --container-offset: 100px;
-      position: relative;
+    /* button size calculations */
+    --container-offset: 100px;
+    position: relative;
   }
   .glow-container {
     pointer-events: none;
@@ -58,19 +92,17 @@
     height: calc(100% - var(--container-offset) + var(--glow-offset));
     x: calc((var(--container-offset) / 2) + var(--glow-offset) / -2);
     y: calc((var(--container-offset) / 2) + var(--glow-offset) / -2);
-    rx: var(--button-radius);
-    fill:transparent;
+    /* rx: var(--button-radius); */
+    fill: transparent;
     stroke: black;
     stroke-width: 5px;
-    stroke-dasharray: var(--glow-line-length) calc(50px - var(--glow-line-length));
-    }
+    stroke-dasharray: var(--glow-line-length)
+      calc(50px - var(--glow-line-length));
+  }
 
   .glow-effect:is(:hover, :focus) :is(.glow-line, .glow-blur) {
     stroke-dashoffset: -80px;
-    transition: 
-      stroke-dashoffset 
-      var(--animation-speed)
-      ease-in;
+    transition: stroke-dashoffset var(--animation-speed) ease-in;
   }
   .glow-line {
     stroke: var(--glow-line-color);
@@ -83,13 +115,25 @@
   }
 
   .glow-effect:is(:hover, :focus) .glow-container {
-    animation: 
-      glow-visibility 
-      ease-in-out
-      var(--animation-speed);
+    animation: glow-visibility ease-in-out var(--animation-speed);
   }
   @keyframes glow-visibility {
-    0%, 100%{ opacity: 0 }
-    25%, 75% { opacity: 1 }
+    0%,
+    100% {
+      opacity: 0;
+    }
+    25%,
+    75% {
+      opacity: 1;
+    }
+  }
+
+  /* This is to turn off the glow animation. The data attribute could be passed as a prop, or just set up in the html (good for if you're not using a framework) */
+  .glow-effect[data-glow-animation="false"] {
+    --glow-line-length: 50px;
+  }
+
+  .glow-effect[data-glow-offset="true"] {
+    --glow-offset: 10px;
   }
 </style>

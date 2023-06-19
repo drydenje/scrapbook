@@ -1,0 +1,29 @@
+---
+import CarCard from "../components/cards/CarCard.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <CarCard />
+    </main>
+  </body>
+</html>
+
+<style>
+  body {
+    margin: 0;
+  }
+
+  main {
+    display: grid;
+    height: 100vh;
+    place-items: center;
+  }
+</style>

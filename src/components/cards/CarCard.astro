@@ -1,0 +1,121 @@
+---
+// Supports weights 100-900
+import "@fontsource-variable/lexend-deca";
+import "@fontsource-variable/big-shoulders-display";
+import icon_sedans from "./icons/icon-sedans.svg";
+import icon_suvs from "./icons/icon-suvs.svg";
+import icon_luxury from "./icons/icon-luxury.svg";
+---
+
+<div class="container">
+  <div class="card">
+    <img src={icon_sedans} alt="An icon of a sedan" />
+    <h3 class="title">Sedans</h3>
+    <p class="description">
+      Choose a sedan for its affordability and excellent fuel economy. Ideal for
+      crusing in the city or on your next road trip.
+    </p>
+    <a href="#" class="learn-more">Learn More</a>
+  </div>
+  <div class="card">
+    <img src={icon_suvs} alt="An icon of a SUV" />
+    <h3 class="title">Suvs</h3>
+    <p class="description">
+      Take an SUV for its spacious interior, power, and versatility. Perfect for
+      your next family vacation and off-road adventures.
+    </p>
+    <a href="#" class="learn-more">Learn More</a>
+  </div>
+  <div class="card">
+    <img src={icon_luxury} alt="An icon of a luxury car" />
+    <h3 class="title">Luxury</h3>
+    <p class="description">
+      Cruise in the best car brands without the bloated prices. Enjoy th
+      enhanced comfort of a luxury rental and arrive in style.
+    </p>
+    <a href="#" class="learn-more">Learn More</a>
+  </div>
+</div>
+
+<style>
+  body {
+    font-size: 125%;
+    --mobile-width: 375px;
+    --desktop-width: 1440px;
+    /* paragraphs */
+    --transparent-white: hsla(0, 0%, 100%, 0.75);
+    /* backgrounds, headings, buttons */
+    --light-gray: hsl(0, 0%, 95%);
+    --bright-orange: hsl(31 77% 52%);
+    --dark-cyan: hsl(184 100% 22%);
+    --very-dark-cyan: hsl(179 100% 13%);
+
+    /* font-family: 'Lexend Deca Variable', sans-serif; weights: 400*/
+    /* font-family: 'Big Shoulders Display Variable', sans-serif; weight: 700 */
+  }
+  .container {
+    /* border: 1px solid dodgerblue; */
+    height: auto;
+    max-width: calc(280px * 3);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .card {
+    /* border: 1px solid yellowgreen; */
+    font-family: "Lexend Deca Variable", sans-serif;
+    font-weight: 400;
+    font-size: 0.9rem;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    justify-content: space-between;
+    color: var(--transparent-white);
+  }
+
+  .card img {
+    width: 5rem;
+  }
+  .card:nth-child(1) {
+    background-color: var(--bright-orange);
+    border-radius: 1rem 0 0 1rem;
+  }
+  .card:nth-child(2) {
+    background-color: var(--dark-cyan);
+  }
+  .card:nth-child(3) {
+    background-color: var(--very-dark-cyan);
+    border-radius: 0 1rem 1rem 0;
+  }
+
+  .title {
+    font-family: "Big Shoulders Display Variable", sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: var(--light-gray);
+    text-transform: uppercase;
+  }
+
+  .description {
+    /*  */
+  }
+
+  .learn-more {
+    display: inline;
+    width: fit-content;
+    padding: 1em 1.9em;
+    text-decoration: none;
+    /* border: 1px solid green; */
+    background-color: var(--transparent-white);
+    border-radius: 25px;
+  }
+
+  .card:nth-child(1) .learn-more {
+    color: var(--bright-orange);
+  }
+  .card:nth-child(2) .learn-more {
+    color: var(--dark-cyan);
+  }
+  .card:nth-child(3) .learn-more {
+    color: var(--very-dark-cyan);
+  }
+</style>
