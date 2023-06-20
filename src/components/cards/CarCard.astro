@@ -119,16 +119,11 @@ import icon_luxury from "./icons/icon-luxury.svg";
     padding: 0.9em 2.1em;
     text-decoration: none;
     /* border: 1px solid green; */
+
+    border: 2px solid var(--transparent-white);
     background-color: var(--transparent-white);
     border-radius: 25px;
-  }
-
-  .learn-more:hover {
-    /* a { */
-    /* color: var(--transparent-white); */
-    color: blue;
-    /* background-color: transparent; */
-    border-color: blue;
+    /* color: blue; */
   }
 
   .card:nth-child(1) .learn-more {
@@ -139,5 +134,15 @@ import icon_luxury from "./icons/icon-luxury.svg";
   }
   .card:nth-child(3) .learn-more {
     color: var(--very-dark-cyan);
+  }
+  .learn-more:hover {
+    /* specificity battle with .card:nth-child, less code this way, not crazy about it though */
+    color: var(--transparent-white) !important;
+    background-color: transparent;
+    /* border-color: var(--transparent-white); */
+  }
+
+  a {
+    color: red;
   }
 </style>
