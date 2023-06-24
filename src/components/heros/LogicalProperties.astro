@@ -2,7 +2,13 @@
 ---
 
 <header>
+  <img
+    class="hero-img"
+    src="./Hero/matt-paul-catalano-0QEG_xOoY7Y-unsplash.jpeg"
+    alt=""
+  />
   <h1>Title</h1>
+  <h2>Sub-title</h2>
   <p>
     Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem
     alias pariatur natus, fugit ut nihil iste et voluptatum consequuntur libero
@@ -25,5 +31,11 @@
     margin-inline: auto;
     /* Equivalent to height: 100vh */
     block-size: 100dvh;
+  }
+
+  .hero-img {
+    width: 100vw;
+    height: calc(100dvh - 40px);
+    object-fit: cover;
   }
 </style>
