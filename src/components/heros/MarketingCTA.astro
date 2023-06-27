@@ -1,0 +1,43 @@
+<header>
+  <img src="./Hero/matt-paul-catalano-0QEG_xOoY7Y-unsplash.jpeg" alt="" />
+  <div class="hero__content">
+    <h1>Product</h1>
+    <p>You really need this product, so hurry and buy it today!</p>
+    <a href="#" class="button">Buy Now</a>
+  </div>
+</header>
+
+<style>
+  header {
+    display: grid;
+    grid-template-areas: "hero";
+    align-items: center;
+    height: 65vh;
+    max-height: 600px;
+  }
+
+  header > * {
+    grid-area: hero;
+  }
+
+  img {
+    object-fit: cover;
+    object-position: 5vw - 5vmin;
+    height: min(65vh, 600px);
+    width: 80%;
+    justify-self: end;
+    transition: 180ms width ease-in;
+  }
+
+  @media (min-width: 60rem) {
+    width: 60%;
+  }
+
+  .hero__content {
+    margin: 1rem 0 1rem 5%;
+    z-index: 1;
+    rgba(249, 251, 253, 0.8);
+    max-width: 35%;
+    min-width: 30ch;
+  }
+</style>
