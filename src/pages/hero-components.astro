@@ -14,7 +14,7 @@ import TwoColumnCopy from "../components/heros/TwoColumnCopy.astro";
   </head>
   <body>
     <!-- <LogicalProperties /> -->
-    <!-- <MarketingCTA /> -->
+    <MarketingCTA />
     <TextOverlay />
     <TwoColumnCopy />
     <p>
@@ -29,5 +29,27 @@ import TwoColumnCopy from "../components/heros/TwoColumnCopy.astro";
 <style>
   body {
     margin: 0;
+  }
+
+  h1,
+  h2 {
+    font-weight: 500;
+    margin: 0 0 1rem;
+  }
+
+  h1 {
+    font-size: 3rem;
+    color: #3c87b3;
+  }
+
+  h2 {
+    color: #2ba27c;
+  }
+
+  header p {
+    font-size: 1.75rem;
+    font-size: clamp(1.3rem, 4vw, 1.75rem);
+    margin-bottom: 0;
+    max-width: 30ch;
   }
 </style>

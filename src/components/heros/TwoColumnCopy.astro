@@ -14,3 +14,31 @@
     </div>
   </div>
 </header>
+
+<style>
+  header {
+    display: grid;
+    grid-template-area: "hero";
+    background-color: #ebf3f8;
+    overflow: hidden;
+  }
+
+  header > * {
+    grid-area: hero;
+  }
+  .hero__wrapper {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30ch, auto));
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    padding: 10vmin 2rem;
+    z-index: 1;
+  }
+
+  .hero__content {
+    background-color: white;
+    border-radius: 8px;
+  }
+</style>
