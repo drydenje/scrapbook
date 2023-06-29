@@ -41,4 +41,36 @@
     background-color: white;
     border-radius: 8px;
   }
+
+  .button {
+    font-size: 1.15rem;
+    font-weight: 500;
+    text-decoration: none;
+    letter-spacing: 0.03em;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    justify-self: start;
+    background-color: var(--secondary);
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.18);
+    border: none;
+    padding: 0.25em 0.75em;
+    min-width: 10ch;
+    min-height: 44px;
+    text-align: center;
+    line-height: 1.1;
+    transition: 220ms all ease-in-out;
+  }
+  .button:hover,
+  .button:active {
+    background-color: scale-color($secondary, $lightness: -20%);
+  }
+
+  .button:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 3px scale-color($secondary, $lightness: -40%);
+  }
 </style>
